@@ -1,0 +1,33 @@
+[project]
+name = "certdiff"
+version = "0.1.0"
+description = "Compare two X.509 certificates and detect critical differences."
+authors = [
+    {name = "Fabio Felici", email = "fabio.felici@pagopa.it"},
+]
+dependencies = [
+    "cryptography",
+    "rich",
+    "click"
+]
+requires-python = ">=3.12"
+readme = "README.md"
+license = {text = "MIT"}
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project.scripts]
+certdiff = "certdiff.cli:main"
+
+[tool.pdm.scripts]
+certdiff = "python -m certdiff.cli"
+
+[tool.pdm]
+distribution = true
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3.5",
+]

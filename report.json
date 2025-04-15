@@ -1,0 +1,19 @@
+{
+    "old_certificate": {
+        "subject": "CN=test.example.com,O=TestOrg,L=Test,ST=Test,C=IT",
+        "issuer": "CN=Test Root CA,O=TestCA,L=Test,ST=Test,C=IT",
+        "serial_number": "0x4d415fd92f5069092318fe682965e88af3b0fb8",
+        "not_valid_before": "2025-04-11T08:58:39+00:00",
+        "not_valid_after": "2026-04-11T08:58:39+00:00",
+        "fingerprint_sha256": "aceb78226e0f900d86e797dd99ebb689236a59e81789c3e087103fe9ea56b437"
+    },
+    "new_certificate": {
+        "subject": "CN=test.example.com,O=TestOrg,L=Test,ST=Test,C=IT",
+        "issuer": "CN=Test Root CA,O=TestCA,L=Test,ST=Test,C=IT",
+        "serial_number": "0x4d415fd92f5069092318fe682965e88af3b0fb8",
+        "not_valid_before": "2025-04-11T08:58:39+00:00",
+        "not_valid_after": "2026-04-11T08:58:39+00:00",
+        "fingerprint_sha256": "aceb78226e0f900d86e797dd99ebb689236a59e81789c3e087103fe9ea56b437"
+    },
+    "differences": []
+}
