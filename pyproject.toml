@@ -10,7 +10,7 @@ dependencies = [
     "rich",
     "click"
 ]
-requires-python = ">=3.12"
+requires-python = ">=3.10"
 readme = "README.md"
 license = {text = "MIT"}
 
@@ -23,6 +23,8 @@ certdiff = "certdiff.cli:main"
 
 [tool.pdm.scripts]
 certdiff = "python -m certdiff.cli"
+test = "pytest"
+lint = "ruff check ."
 
 [tool.pdm]
 distribution = true
@@ -30,4 +32,14 @@ distribution = true
 [dependency-groups]
 dev = [
     "pytest>=8.3.5",
+    "pytest-cov>=6.1.1",
+    "ruff>=0.11.5",
 ]
+
+[tool.ruff]
+lint.select = ["E", "F"]
+line-length = 100
+target-version = "py310"
+
+[tool.pytest.ini_options]
+addopts = "--cov=certdiff --cov-report=html"
