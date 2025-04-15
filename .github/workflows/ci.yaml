@@ -78,7 +78,7 @@ jobs:
 
   release:
     name: GitHub Release
-    needs: build-and-test
+    needs: build
     runs-on: ubuntu-latest
     if: startsWith(github.ref, 'refs/tags/')
 
