@@ -81,6 +81,7 @@ jobs:
         run: pdm build
 
       - name: Upload dist artifacts
+        if: matrix.python-version == '3.12'
         uses: actions/upload-artifact@v4
         with:
           name: build-dist
