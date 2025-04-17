@@ -1,6 +1,6 @@
 [project]
 name = "certdiff"
-version = "0.1.0"
+version = "0.2.0"
 description = "Compare two X.509 certificates and detect critical differences."
 authors = [
     {name = "Fabio Felici", email = "fabio.felici@pagopa.it"},
@@ -42,4 +42,4 @@ line-length = 100
 target-version = "py310"
 
 [tool.pytest.ini_options]
-addopts = "--cov=certdiff --cov-report=html"
+addopts = "--cov=certdiff --cov-report=html --cov-report=term-missing"
