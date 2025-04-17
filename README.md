@@ -1,6 +1,6 @@
 # 🔍 CertDiff 🔒
 
-![Python](https://img.shields.io/badge/python-3.12+-blue?logo=python)
+![Python](https://img.shields.io/badge/python-3.10+-blue?logo=python)
 ![Status](https://img.shields.io/badge/status-active-brightgreen)
 
 **CertDiff** is a smart utility designed to compare two X.509 certificates and detect critical differences.
