@@ -68,7 +68,7 @@ def compare_certificates(old_cert_input, new_cert_input, verbose=False, report_f
                     "field": field,
                     "old": old_info[cert_count][field],
                     "new": new_info[cert_count][field],
-                    "type": f"{new_info[cert_count]["type"]}"
+                    "type": f"{new_info[cert_count]['type']}"
                 })
 
     if report_file:
