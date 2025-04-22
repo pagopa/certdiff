@@ -1,3 +1,5 @@
+import os.path
+
 import click
 from .core import compare_certificates, load_certificate
 from .utils import fetch_certificate_from_url
@@ -34,7 +36,7 @@ def main(old_cert_path, old_cert_url, new_cert_path, verbose, report_file):
     if differences:
         click.secho("❌ Certificates differ:", fg='red')
         for diff in differences:
-            click.echo(f"- {diff['field'].title()}: {diff['old']} ➔ {diff['new']}")
+            click.echo(f"- [{diff['type']}] {diff['field'].title()}: {diff['old']} ➔ {diff['new']}")
         raise SystemExit(1)
     else:
         click.secho("✅ Certificates are equivalent.", fg='green')

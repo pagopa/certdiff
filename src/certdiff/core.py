@@ -2,6 +2,7 @@ import json
 from cryptography import x509
 from cryptography.hazmat.primitives import hashes
 from rich.console import Console
+from .utils import classify_certificates
 
 console = Console()
 
@@ -22,6 +23,7 @@ def extract_certificate_info(certs):
             "not_valid_before": cert.not_valid_before_utc.isoformat(),
             "not_valid_after": cert.not_valid_after_utc.isoformat(),
             "fingerprint_sha256": cert.fingerprint(hashes.SHA256()).hex(),
+            "type": classify_certificates(cert)
         })
     return certs_info
 
@@ -65,7 +67,8 @@ def compare_certificates(old_cert_input, new_cert_input, verbose=False, report_f
                 differences.append({
                     "field": field,
                     "old": old_info[cert_count][field],
-                    "new": new_info[cert_count][field]
+                    "new": new_info[cert_count][field],
+                    "type": f"{new_info[cert_count]['type']}"
                 })
 
     if report_file:
