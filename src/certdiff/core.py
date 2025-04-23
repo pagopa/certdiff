@@ -58,18 +58,29 @@ def compare_certificates(old_cert_input, new_cert_input, verbose=False, report_f
             for key, value in n.items():
                 console.print(f"  {key}: {value}")
 
-    fields_to_compare = ["subject", "issuer"]
+    fields_to_compare = [
+        "subject",
+        "issuer",
+        "serial_number",
+        "not_valid_before",
+        "not_valid_after",
+        "fingerprint_sha256",
+    ]
 
     for field in fields_to_compare:
         for cert_count in range(max(len(old_info), len(new_info))):
             cert_count=cert_count-1
-            if old_info[cert_count][field] != new_info[cert_count][field]:
-                differences.append({
-                    "field": field,
-                    "old": old_info[cert_count][field],
-                    "new": new_info[cert_count][field],
-                    "type": f"{new_info[cert_count]['type']}"
-                })
+            try:
+                if old_info[cert_count][field] != new_info[cert_count][field]:
+                    differences.append({
+                        "field": field,
+                        "old": old_info[cert_count][field],
+                        "new": new_info[cert_count][field],
+                        "type": f"{new_info[cert_count]['type']}"
+                    })
+            except IndexError:
+                console.print("[bold red] ⚠️ Certificate chain is not the same!.[/bold red]")
+                raise SystemExit(1)
 
     if report_file:
         report_data = {
