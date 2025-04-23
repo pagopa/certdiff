@@ -17,8 +17,9 @@ def fetch_certificate_from_url(url):
 
 def classify_certificates(certificate):
     try:
-        is_ca = certificate.extensions.get_extension_for_oid(ExtensionOID.BASIC_CONSTRAINTS).value.ca
-    except Exception as e:
+        is_ca = (certificate.extensions
+                 .get_extension_for_oid(ExtensionOID.BASIC_CONSTRAINTS).value.ca)
+    except Exception:
         is_ca = False
 
     if certificate.issuer == certificate.subject and is_ca:
