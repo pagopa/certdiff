@@ -27,7 +27,7 @@ def main(old_cert_path, old_cert_url, new_cert_path, verbose, report_file):
     if old_cert_path:
         old_cert = load_certificate(old_cert_path)
     else:
-        old_cert = fetch_certificate_from_url(old_cert_url)
+        old_cert = [fetch_certificate_from_url(old_cert_url)]
 
     new_cert = load_certificate(new_cert_path)
 
