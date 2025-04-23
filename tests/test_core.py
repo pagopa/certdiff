@@ -138,7 +138,7 @@ def test_certificate_minor_changes(cert1_name, cert2_name, expect_diff, tmp_path
 @pytest.mark.parametrize("cert1_name, cert2_name, expect_diff", [
     ("test_leaf_ok.pem", "bad_cert.pem", True),
 ])
-def test_certificate_leaf_comparison(cert1_name, cert2_name, expect_diff, tmp_path):
+def test_certificate_wrong_chain_comparison(cert1_name, cert2_name, expect_diff, tmp_path):
     cert1 = load_certificate(data_dir / cert1_name)
     cert2 = load_certificate(data_dir / cert2_name)
     report_file = tmp_path / "report.json"

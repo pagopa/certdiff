@@ -96,3 +96,18 @@ Example of JSON report:
       ]
     }
 
+## ❌ Exit codes
+
+The tool provides specific exit codes to help integrate with CI/CD pipelines:
+
+- `0`: **Certificates are equivalent**
+  - No critical differences found between certificates
+
+- `1`: **Critical differences detected**
+  - Changes in critical fields like Subject or Issuer
+  - Different certificate chains
+  - Comparison failures
+
+- `2`: **Non-critical differences detected**
+  - Changes in other fields (e.g., serial number, validity dates)
+  - Certificates are functionally equivalent but have minor differences

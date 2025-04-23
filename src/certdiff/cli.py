@@ -42,7 +42,7 @@ def main(old_cert_path, old_cert_url, new_cert_path, verbose, report_file):
         click.secho("ℹ️ Certificates changes:", fg='blue')
         for diff in differences:
             click.echo(f"- [{diff['type']}] {diff['field'].title()}: {diff['old']} ➔ {diff['new']}")
-        raise SystemExit(0)
+        raise SystemExit(2)
     else:
         click.secho("✅ Certificates are equivalent.", fg='green')
         raise SystemExit(0)
