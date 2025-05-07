@@ -1,6 +1,6 @@
 [project]
 name = "certdiff"
-version = "0.2.4"
+version = "0.2.5"
 description = "Compare two X.509 certificates and detect critical differences."
 authors = [
     {name = "Fabio Felici", email = "fabio.felici@pagopa.it"},
