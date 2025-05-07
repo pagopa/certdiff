@@ -104,7 +104,7 @@ jobs:
           path: dist/
 
       - name: Generate packages sha256
-        run: for x in $(ls -1 dist/); do sha256sum --quiet dist/$x > dist/$x.sha256; done
+        run: for x in $(ls -1 dist/); do sha256sum dist/$x > dist/$x.sha256; done
 
       - name: Upload release artifacts
         uses: softprops/action-gh-release@v2
