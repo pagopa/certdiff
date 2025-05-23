@@ -1,4 +1,4 @@
-ARG PYTHON_BASE=3.10-slim
+ARG PYTHON_BASE=3.10-slim@sha256:49454d2bf78a48f217eb25ecbcb4b5face313fea6a6e82706465a6990303ada2
 # build stage
 FROM python:$PYTHON_BASE AS builder
 
